@@ -11,16 +11,18 @@ function Router() {
   return (
     <Switch>
       {/* All books */}
-      <Route path="/" component={LibraryPage} />
+      <Route path="/">
+        {(props) => <LibraryPage {...props} />}
+      </Route>
       
       {/* Reading Now */}
       <Route path="/reading">
-        {() => <LibraryPage statusFilter="reading" />}
+        {(props) => <LibraryPage {...props} statusFilter="reading" />}
       </Route>
       
       {/* History/Completed */}
       <Route path="/history">
-        {() => <LibraryPage statusFilter="completed" />}
+        {(props) => <LibraryPage {...props} statusFilter="completed" />}
       </Route>
       
       <Route component={NotFound} />
