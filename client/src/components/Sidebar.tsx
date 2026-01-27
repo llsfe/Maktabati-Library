@@ -1,6 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { LayoutGrid, BookOpen, History, Library } from "lucide-react";
+import { LayoutGrid, BookOpen, History, Library, Sun, Moon } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const navigation = [
   { name: "المكتبة", href: "/", icon: LayoutGrid },
@@ -10,6 +12,20 @@ const navigation = [
 
 export function Sidebar() {
   const [location] = useLocation();
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    return (localStorage.getItem("theme") as "light" | "dark") || "dark";
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === "light" ? "dark" : "light");
+  };
 
   return (
     <div className="flex h-full w-64 flex-col border-l border-border bg-card shadow-xl">
@@ -43,12 +59,28 @@ export function Sidebar() {
         </nav>
       </div>
 
-      <div className="p-6">
+      <div className="p-6 space-y-4">
         <div className="rounded-xl bg-secondary/50 p-4 border border-border/50">
-          <p className="text-xs text-muted-foreground text-center">
-            إصدار تجريبي v1.0
-          </p>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-xs font-medium text-foreground">الوضع النهاري</span>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="h-8 w-8 rounded-lg hover:bg-background"
+            >
+              {theme === "light" ? (
+                <Moon className="h-4 w-4" />
+              ) : (
+                <Sun className="h-4 w-4" />
+              )}
+            </Button>
+          </div>
         </div>
+        
+        <p className="text-[10px] text-muted-foreground text-center opacity-50">
+          إصدار تجريبي v1.0
+        </p>
       </div>
     </div>
   );

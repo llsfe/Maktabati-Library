@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import LibraryPage from "@/pages/LibraryPage";
+import { useEffect, useState } from "react";
 
 function Router() {
   return (
@@ -28,6 +29,17 @@ function Router() {
 }
 
 function App() {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    return (localStorage.getItem("theme") as "light" | "dark") || "dark";
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
