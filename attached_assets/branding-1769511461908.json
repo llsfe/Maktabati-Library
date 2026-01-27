@@ -1,0 +1,88 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Cairo",
+      "count": 34
+    },
+    {
+      "family": "Inter",
+      "count": 34
+    },
+    {
+      "family": "sans-serif",
+      "count": 34
+    }
+  ],
+  "colors": {
+    "primary": "#9DA3AF",
+    "accent": "#9DA3AF",
+    "background": "#16181D",
+    "textPrimary": "#16181D",
+    "link": "#9DA3AF"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Cairo",
+      "heading": "Cairo"
+    },
+    "fontStacks": {
+      "body": [
+        "Cairo",
+        "Inter",
+        "sans-serif"
+      ],
+      "heading": [
+        "Cairo",
+        "Inter",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Cairo",
+        "Inter",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "30px",
+      "h2": "30px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 8,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "input": {
+      "background": "#16181D",
+      "textColor": "#E2E4E9",
+      "borderColor": "#2C313A",
+      "borderRadius": "6px",
+      "borderRadiusCorners": {
+        "topLeft": "6px",
+        "topRight": "6px",
+        "bottomRight": "6px",
+        "bottomLeft": "6px"
+      },
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.svg",
+    "favicon": "https://pdf-library-organizer-1--abdelrahmanhus9.replit.app/favicon.png",
+    "ogImage": "https://pdf-library-organizer-1--AbdelrahmanHus9.replit.app/opengraph.jpg"
+  },
+  "__framework_hints": [],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Logo rejected: Red flags detected (small square icon). Strong indicators: header logo linking to homepage, header location, visible, highest logo on page, too small (likely icon, penalty), small square icon (likely UI icon, heavy penalty), SVG format. Score: 80 (clear winner by 37 points)",
+    "confidence": 0.9,
+    "rejected": true
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}
