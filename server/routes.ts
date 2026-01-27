@@ -3,12 +3,16 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { registerObjectStorageRoutes } from "./replit_integrations/object_storage";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
   
+  // Register object storage routes for file uploads
+  registerObjectStorageRoutes(app);
+
   app.get(api.books.list.path, async (req, res) => {
     try {
       const search = req.query.search as string | undefined;
