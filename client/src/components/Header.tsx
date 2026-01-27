@@ -7,9 +7,10 @@ import { useState } from "react";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
+  onToggleFilter: () => void;
 }
 
-export function Header({ onSearch }: HeaderProps) {
+export function Header({ onSearch, onToggleFilter }: HeaderProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [location] = useLocation();
 
@@ -49,7 +50,12 @@ export function Header({ onSearch }: HeaderProps) {
             />
           </div>
           
-          <Button variant="outline" size="icon" className="shrink-0 rounded-xl border-border bg-secondary/30 hover:bg-secondary hover:text-accent">
+          <Button 
+            variant="outline" 
+            size="icon" 
+            onClick={onToggleFilter}
+            className="shrink-0 rounded-xl border-border bg-secondary/30 hover:bg-secondary hover:text-accent"
+          >
             <Filter className="h-5 w-5" />
           </Button>
 
