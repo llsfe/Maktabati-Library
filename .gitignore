@@ -1,20 +1,21 @@
-# Executables and Libraries
-/*.exe
-/*.dll
-/*.pak
-/*.bin
-/icudtl.dat
-/LICENSES.chromium.html
-/locales/
-/resources/
-/version
+# Dependencies
+node_modules/
 
-# User Data
-/Books/
+# Build outputs
+dist/
+dist-electron/
+release/
 
 # Local Dev configuration
-/Dev/node_modules/
-/Dev/dist/
-/Dev/dist-electron/
-/Dev/.local/
-/Dev/log.txt
+.local/
+log.txt
+*.log
+.DS_Store
+
+# User Data (Library specific)
+/Books/
+db.json
+
+# IDEs
+.vscode/
+.idea/
