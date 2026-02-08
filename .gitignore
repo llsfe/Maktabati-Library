@@ -1,6 +1,20 @@
-node_modules
-dist
-.DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz
+# Executables and Libraries
+/*.exe
+/*.dll
+/*.pak
+/*.bin
+/icudtl.dat
+/LICENSES.chromium.html
+/locales/
+/resources/
+/version
+
+# User Data
+/Books/
+
+# Local Dev configuration
+/Dev/node_modules/
+/Dev/dist/
+/Dev/dist-electron/
+/Dev/.local/
+/Dev/log.txt

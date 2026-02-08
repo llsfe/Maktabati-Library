@@ -1,0 +1,12 @@
+import { drizzle } from "drizzle-orm/node-postgres";
+import pg from "pg";
+import * as schema from "@shared/schema";
+
+const { Pool } = pg;
+
+// DATABASE_URL is optional; falling back to in-memory if missing
+
+export const pool = process.env.DATABASE_URL
+  ? new Pool({ connectionString: process.env.DATABASE_URL })
+  : null;
+export const db = pool ? drizzle(pool, { schema }) : null;
